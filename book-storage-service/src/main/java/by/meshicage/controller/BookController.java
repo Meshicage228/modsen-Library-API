@@ -13,34 +13,31 @@ import org.springframework.web.bind.annotation.*;
 public class BookController implements BookControllerDoc {
     private final BookService bookService;
 
-    public CreatedBookDto saveBook(@RequestBody CreateBookDto createBookDto) {
+    public CreatedBookDto saveBook(CreateBookDto createBookDto) {
         return bookService.createBook(createBookDto);
     }
 
-    public CreatedBookDto getBook(@PathVariable Long id) {
+    public CreatedBookDto getBook(Long id) {
         return bookService.getBookById(id);
     }
 
-    public Page<CreatedBookDto> getAllBooks(@RequestParam(defaultValue = "0", required = false) Integer pageNumber,
-                                            @RequestParam(defaultValue = "100", required = false) Integer pageSize) {
+    public Page<CreatedBookDto> getAllBooks(Integer pageNumber, Integer pageSize) {
         return bookService.getAllBooks(pageNumber, pageSize);
     }
 
-    public CreatedBookDto getBook(@RequestParam("isbn") String ISBN) {
+    public CreatedBookDto getBook(String ISBN) {
         return bookService.getBookByISBN(ISBN);
     }
 
-    public UpdatedBookDto fullBookUpdate(@PathVariable Long id,
-                                         @RequestBody FullBookUpdateDto bookUpdateDto) {
+    public UpdatedBookDto fullBookUpdate(Long id, FullBookUpdateDto bookUpdateDto) {
         return bookService.fullUpdate(id, bookUpdateDto);
     }
 
-    public UpdatedBookDto partBookUpdate(@PathVariable Long id,
-                                         @RequestBody PartUpdateBookDto partUpdateBookDto) {
+    public UpdatedBookDto partBookUpdate(Long id, PartUpdateBookDto partUpdateBookDto) {
         return bookService.partUpdate(id, partUpdateBookDto);
     }
 
-    public void deleteBook(@PathVariable Long id) {
+    public void deleteBook(Long id) {
         bookService.deleteBookById(id);
     }
 }
