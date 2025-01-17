@@ -43,3 +43,18 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - book-tracker-service
+  authentication-service:
+    restart: on-failure
+    ports:
+      - ${AUTH_LOCAL_PORT}:${AUTH_DOCKER_PORT}
+    container_name: authentication-service
+    environment:
+      APP_TOKEN_EXPIRETIME: 7000
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://main-db:${POSTGRES_DOCKER_PORT}/library_db
+    build:
+      context: /authentication-service
+      dockerfile: Dockerfile
+    depends_on:
+      - main-db
