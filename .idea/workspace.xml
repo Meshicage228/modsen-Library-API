@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="20c81fff-5412-4da6-bab9-66d748c87c1c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/authentication-service/modsen-Library-API.authentication-service.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/book-storage-service/modsen-Library-API.book-storage-service.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/book-tracker-service/modsen-Library-API.book-tracker-service.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/authentication-service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/book-tracker-service">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/book-storage-service">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/book-tracker-service">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/authentication-service">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="modsen-Library-API" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="modsen-Library-API" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="modsen-Library-API" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="modsen-Library-API" type="f1a62948:ProjectNode" />
+                <item name="authentication-service" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="modsen-Library-API" type="f1a62948:ProjectNode" />
+                <item name="authentication-service" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="modsen-Library-API" type="f1a62948:ProjectNode" />
+                <item name="authentication-service" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="modsen-Library-API" type="f1a62948:ProjectNode" />
+                <item name="book-storage-service" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="modsen-Library-API" type="f1a62948:ProjectNode" />
+                <item name="book-storage-service" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="modsen-Library-API" type="f1a62948:ProjectNode" />
+                <item name="book-storage-service" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="modsen-Library-API" type="f1a62948:ProjectNode" />
+                <item name="book-tracker-service" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="modsen-Library-API" type="f1a62948:ProjectNode" />
+                <item name="book-tracker-service" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="modsen-Library-API" type="f1a62948:ProjectNode" />
+                <item name="book-tracker-service" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="added: authentication service init" />
+        <option name="rewordedMessage" value="added: authentication service init" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="a5ad1febaea7de21ca83f8d513a34110be8ba569" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="e17d04d5-2347-434d-ad09-30b81bec443c" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/authentication-service/build.gradle" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2rhp1rz7KqKMJlZgfyXpLF1xt9H" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.docker-compose.yaml.authentication-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yaml.book-storage-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yaml.book-tracker-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yaml.main-db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.Build modsen-Library-API.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.modsen-Library-API [bootJar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.modsen-Library-API [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.modsen-Library-API [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.modsen-Library-API:authentication-service [bootJar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.modsen-Library-API:authentication-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.modsen-Library-API:authentication-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.modsen-Library-API:book-storage-service [:book-storage-service:Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.modsen-Library-API:book-storage-service [bootJar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.modsen-Library-API:book-storage-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.modsen-Library-API:book-storage-service [classes].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.modsen-Library-API:book-storage-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.modsen-Library-API:book-tracker-service [bootJar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.modsen-Library-API:book-tracker-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.modsen-Library-API:book-tracker-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AuthenticationServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.BookStorageApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.BookTrackerServiceApplication (2).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.BookTrackerServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaProjects/modsen-Library-API/book-storage-service/src/main/java/by/meshicage/controller&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="by.meshicage.authenticationservice.service.impl" />
+      <recent name="by.meshicage.authenticationservice.controller.doc" />
+      <recent name="by.meshicage.controller.doc" />
+      <recent name="by.meshicage.exception" />
+      <recent name="by.meshicage.controller.repository" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProjects\modsen-Library-API\book-storage-service\src\main\java\by\meshicage\controller" />
+      <recent name="D:\JavaProjects\modsen-Library-API\book-storage-service\src\main\java\by\meshicage\service" />
+      <recent name="D:\JavaProjects\modsen-Library-API\book-storage-service\src\main\java\by\meshicage\dto\user" />
+      <recent name="D:\JavaProjects\modsen-Library-API\authentication-service" />
+      <recent name="D:\JavaProjects\modsen-Library-API\authentication-service\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaProjects\modsen-Library-API\book-storage-service\src\main\resources\db.migration" />
+      <recent name="D:\JavaProjects\modsen-Library-API\book-storage-service\src\main\resources" />
+      <recent name="D:\JavaProjects\modsen-Library-API\book-storage-service\src\test\resources\db.migration\scripts" />
+      <recent name="D:\JavaProjects\modsen-Library-API\book-storage-service\src\test\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="by.meshicage.authenticationservice.dto" />
+      <recent name="by.meshicage.authenticationservice.exception" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.modsen-Library-API:book-tracker-service [build]">
+    <configuration name="modsen-Library-API [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="modsen-Library-API:authentication-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/authentication-service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="modsen-Library-API:book-storage-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/book-storage-service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="modsen-Library-API:book-tracker-service [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/book-tracker-service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="modsen-Library-API:book-tracker-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/book-tracker-service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="AuthenticationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="modsen-Library-API.authentication-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="by.meshicage.authenticationservice.AuthenticationServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookStorageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="modsen-Library-API.book-storage-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="by.meshicage.BookStorageApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookTrackerServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="modsen-Library-API.book-tracker-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="by.meshicage.BookTrackerServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-image" temporary="true">
+      <deployment type="docker-image">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.modsen-Library-API [build]" />
+      <item itemvalue="Gradle.modsen-Library-API:authentication-service [build]" />
+      <item itemvalue="Gradle.modsen-Library-API:book-storage-service [build]" />
+      <item itemvalue="Gradle.modsen-Library-API:book-tracker-service [bootJar]" />
+      <item itemvalue="Gradle.modsen-Library-API:book-tracker-service [build]" />
+      <item itemvalue="Spring Boot.AuthenticationServiceApplication" />
+      <item itemvalue="Spring Boot.BookStorageApplication" />
+      <item itemvalue="Spring Boot.BookTrackerServiceApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.modsen-Library-API:book-tracker-service [build]" />
+        <item itemvalue="Gradle.modsen-Library-API:book-tracker-service [bootJar]" />
+        <item itemvalue="Gradle.modsen-Library-API:book-storage-service [build]" />
+        <item itemvalue="Gradle.modsen-Library-API:authentication-service [build]" />
+        <item itemvalue="Gradle.modsen-Library-API [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="20c81fff-5412-4da6-bab9-66d748c87c1c" name="Changes" comment="" />
+      <created>1737020952946</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737020952946</updated>
+      <workItem from="1737020954869" duration="116000" />
+      <workItem from="1737023456550" duration="5000" />
+      <workItem from="1737023476478" duration="23440000" />
+      <workItem from="1737050730953" duration="5021000" />
+      <workItem from="1737059264852" duration="96000" />
+      <workItem from="1737104567608" duration="17179000" />
+      <workItem from="1737129679856" duration="9400000" />
+      <workItem from="1737143680710" duration="5113000" />
+      <workItem from="1737149077186" duration="39000" />
+      <workItem from="1737149375733" duration="3379000" />
+    </task>
+    <task id="LOCAL-00001" summary="added: book-storage-service init">
+      <option name="closed" value="true" />
+      <created>1737052017221</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737052017221</updated>
+    </task>
+    <task id="LOCAL-00002" summary="refactored: added swagger doc info">
+      <option name="closed" value="true" />
+      <created>1737053845716</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737053845716</updated>
+    </task>
+    <task id="LOCAL-00003" summary="init">
+      <option name="closed" value="true" />
+      <created>1737053865282</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1737053865282</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added: book-tracker-service env">
+      <option name="closed" value="true" />
+      <created>1737059359350</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1737059359350</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added: init service logic">
+      <option name="closed" value="true" />
+      <created>1737125037558</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1737125037558</updated>
+    </task>
+    <task id="LOCAL-00006" summary="changed: restructured table and given new constraints">
+      <option name="closed" value="true" />
+      <created>1737125071945</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1737125071945</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fixed: return rate and number of entries">
+      <option name="closed" value="true" />
+      <created>1737126299125</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1737126299125</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added: feign client support">
+      <option name="closed" value="true" />
+      <created>1737135955797</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1737135955797</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added: swagger endpoints documentation">
+      <option name="closed" value="true" />
+      <created>1737136459068</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1737136459068</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added: authentication service init">
+      <option name="closed" value="true" />
+      <created>1737142417826</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1737142417826</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added: authentication service init">
+      <option name="closed" value="true" />
+      <created>1737142432924</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1737142432924</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added: init dockerfile">
+      <option name="closed" value="true" />
+      <created>1737142578398</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1737142578398</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fixed: dependency simplified">
+      <option name="closed" value="true" />
+      <created>1737143151205</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1737143151218</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixed: renamed sql scripts">
+      <option name="closed" value="true" />
+      <created>1737152434274</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1737152434274</updated>
+    </task>
+    <task id="LOCAL-00015" summary="removed">
+      <option name="closed" value="true" />
+      <created>1737152459667</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1737152459667</updated>
+    </task>
+    <task id="LOCAL-00016" summary="removed unnecessary dependencies">
+      <option name="closed" value="true" />
+      <created>1737152492486</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1737152492486</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fixed: replaced token bl to storage-service">
+      <option name="closed" value="true" />
+      <created>1737152533953</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1737152533953</updated>
+    </task>
+    <task id="LOCAL-00018" summary="added: connection to microservice">
+      <option name="closed" value="true" />
+      <created>1737152590871</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1737152590871</updated>
+    </task>
+    <task id="LOCAL-00019" summary="removed param">
+      <option name="closed" value="true" />
+      <created>1737152602731</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1737152602731</updated>
+    </task>
+    <task id="LOCAL-00020" summary="replaced doc">
+      <option name="closed" value="true" />
+      <created>1737152626518</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1737152626518</updated>
+    </task>
+    <task id="LOCAL-00021" summary="init">
+      <option name="closed" value="true" />
+      <created>1737152637329</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1737152637329</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactored: added swagger doc info" />
+    <MESSAGE value="added: book-tracker-service env" />
+    <MESSAGE value="added: book-storage-service init" />
+    <MESSAGE value="added: init service logic" />
+    <MESSAGE value="changed: restructured table and given new constraints" />
+    <MESSAGE value="fixed: return rate and number of entries" />
+    <MESSAGE value="added: feign client support" />
+    <MESSAGE value="added: swagger endpoints documentation" />
+    <MESSAGE value="added: d" />
+    <MESSAGE value="added: authentication service init" />
+    <MESSAGE value="added: init dockerfile" />
+    <MESSAGE value="fixed: dependency simplified" />
+    <MESSAGE value="fixed: renamed sql scripts" />
+    <MESSAGE value="removed" />
+    <MESSAGE value="removed unnecessary dependencies" />
+    <MESSAGE value="fixed: replaced token bl to storage-service" />
+    <MESSAGE value="added: connection to microservice" />
+    <MESSAGE value="removed param" />
+    <MESSAGE value="replaced doc" />
+    <MESSAGE value="added:" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/book-storage-service/src/main/java/by/meshicage/config/TokenDecoderFilter.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

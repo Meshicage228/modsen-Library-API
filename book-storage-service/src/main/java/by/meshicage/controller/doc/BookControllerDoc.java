@@ -1,4 +1,4 @@
-package by.meshicage.controller;
+package by.meshicage.controller.doc;
 
 import by.meshicage.dto.book.*;
 import by.meshicage.exception.dto.ExceptionResponse;

@@ -1,6 +1,6 @@
-package by.meshicage.authenticationservice.controller.doc;
+package by.meshicage.controller.doc;
 
-import by.meshicage.authenticationservice.dto.UserRequestDto;
+import by.meshicage.dto.user.UserRequestDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

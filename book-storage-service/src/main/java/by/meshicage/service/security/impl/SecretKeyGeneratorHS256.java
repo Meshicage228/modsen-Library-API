@@ -1,6 +1,6 @@
-package by.meshicage.authenticationservice.service.impl;
+package by.meshicage.service.security.impl;
 
-import by.meshicage.authenticationservice.service.SecretKeyGenerator;
+import by.meshicage.service.security.SecretKeyGenerator;
 import io.jsonwebtoken.Jwts;
 import org.springframework.stereotype.Service;
 
