@@ -1,6 +1,7 @@
 package by.meshicage.service.impl;
 
 import by.meshicage.dto.book.*;
+import by.meshicage.entity.BookEntity;
 import by.meshicage.entity.GenreEntity;
 import by.meshicage.exception.impl.book.BookNotFoundException;
 import by.meshicage.exception.impl.book.BookUpdateException;
@@ -21,6 +22,7 @@ import java.util.Optional;
 public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
     private final GenreService genreService;
+    private final TrackerServiceImpl trackerService;
     private final BookMapper bookMapper;
 
     @Override
@@ -31,7 +33,11 @@ public class BookServiceImpl implements BookService {
                     bookEntity.setGenre(byId);
                     return bookEntity;
                 })
-                .map(bookRepository::save)
+                .map(bookEntity -> {
+                    BookEntity saved = bookRepository.save(bookEntity);
+                    trackerService.createBookTracking(saved.getId());
+                    return saved;
+                })
                 .map(bookMapper::toCreatedBookDto)
                 .orElseThrow(RuntimeException::new);
     }
@@ -77,5 +83,6 @@ public class BookServiceImpl implements BookService {
     @Override
     public void deleteBookById(Long id) {
         bookRepository.deleteById(id);
+        trackerService.deleteBookTracking(id);
     }
 }
