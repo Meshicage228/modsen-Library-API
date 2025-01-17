@@ -1,4 +1,4 @@
-package by.meshicage.authenticationservice.dto;
+package by.meshicage.dto.user;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

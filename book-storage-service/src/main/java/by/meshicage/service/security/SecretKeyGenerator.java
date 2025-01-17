@@ -1,4 +1,4 @@
-package by.meshicage.authenticationservice.service;
+package by.meshicage.service.security;
 
 import javax.crypto.SecretKey;
 

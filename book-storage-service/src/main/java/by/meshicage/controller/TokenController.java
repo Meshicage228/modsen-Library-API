@@ -1,8 +1,8 @@
-package by.meshicage.authenticationservice.controller;
+package by.meshicage.controller;
 
-import by.meshicage.authenticationservice.controller.doc.TokenControllerDoc;
-import by.meshicage.authenticationservice.dto.UserRequestDto;
-import by.meshicage.authenticationservice.service.TokenService;
+import by.meshicage.controller.doc.TokenControllerDoc;
+import by.meshicage.dto.user.UserRequestDto;
+import by.meshicage.service.security.TokenService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
