@@ -31,6 +31,7 @@ services:
       - ${TRACKER_LOCAL_PORT}:${TRACKER_DOCKER_PORT}
     container_name: book-tracker
     environment:
+      APP_RETURNRATE: 7
       SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
       SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
       SPRING_DATASOURCE_URL: jdbc:postgresql://main-db:${POSTGRES_DOCKER_PORT}/library_db
@@ -38,4 +39,4 @@ services:
       context: /book-tracker-service
       dockerfile: Dockerfile
     depends_on:
-      - main-db
+      - book-storage-service

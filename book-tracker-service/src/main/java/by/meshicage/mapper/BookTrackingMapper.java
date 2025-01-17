@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public abstract class BookTrackingMapper {
-    @Value("${app.return_rate:5}")
+    @Value("${app.returnRate:5}")
     private Integer returnRate;
 
     @Mapping(target = "borrowedAt", expression = "java(getCurrentDate())")
