@@ -38,4 +38,4 @@ services:
       context: /book-tracker-service
       dockerfile: Dockerfile
     depends_on:
-      - book-storage-service
+      - main-db

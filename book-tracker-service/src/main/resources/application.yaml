@@ -16,3 +16,5 @@ spring:
     properties:
       hibernate:
         format_sql: true
+app:
+  return_rate: 7
