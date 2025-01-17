@@ -26,30 +26,12 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - main-db
-  book-storage-service:
-    restart: on-failure
-    ports:
-      - ${STORAGE_LOCAL_PORT}:${STORAGE_DOCKER_PORT}
-    container_name: book-storage
-    environment:
-      APP_CLIENTS_TRACKER_URL: book-tracker-service:${TRACKER_DOCKER_PORT}
-      APP_CLIENTS_TRACKER_NAME: ${TRACKER_NAME}
-      APP_CLIENTS_TRACKER_PATH: ${TRACKER_PATH}
-      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
-      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
-      SPRING_DATASOURCE_URL: jdbc:postgresql://main-db:${POSTGRES_DOCKER_PORT}/library_db
-    build:
-      context: /book-storage-service
-      dockerfile: Dockerfile
-    depends_on:
-      - book-tracker-service
   authentication-service:
     restart: on-failure
     ports:
       - ${AUTH_LOCAL_PORT}:${AUTH_DOCKER_PORT}
-    container_name: authentication-service
+    container_name: auth-service
     environment:
-      APP_TOKEN_EXPIRETIME: 7000
       SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
       SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
       SPRING_DATASOURCE_URL: jdbc:postgresql://main-db:${POSTGRES_DOCKER_PORT}/library_db
@@ -58,3 +40,25 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - main-db
+  book-storage-service:
+    restart: on-failure
+    ports:
+      - ${STORAGE_LOCAL_PORT}:${STORAGE_DOCKER_PORT}
+    container_name: book-storage
+    environment:
+      APP_TOKEN_EXPIRETIME: 20000
+      APP_CLIENTS_TRACKER_URL: book-tracker-service:${TRACKER_DOCKER_PORT}
+      APP_CLIENTS_TRACKER_NAME: ${TRACKER_NAME}
+      APP_CLIENTS_TRACKER_PATH: ${TRACKER_PATH}
+      APP_CLIENTS_USER-CLIENT_URL: authentication-service:${AUTH_DOCKER_PORT}
+      APP_CLIENTS_USER-CLIENT_NAME: ${AUTH_NAME}
+      APP_CLIENTS_USER-CLIENT_PATH: ${AUTH_PATH}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://main-db:${POSTGRES_DOCKER_PORT}/library_db
+    build:
+      context: /book-storage-service
+      dockerfile: Dockerfile
+    depends_on:
+      - book-tracker-service
+      - authentication-service
