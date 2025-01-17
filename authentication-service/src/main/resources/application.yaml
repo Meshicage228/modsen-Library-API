@@ -9,6 +9,3 @@ spring:
   liquibase:
     enabled: true
     change-log: db.changelog/changelog-master.xml
-app:
-  token:
-    expireTime: 7000
