@@ -46,7 +46,7 @@ services:
       - ${STORAGE_LOCAL_PORT}:${STORAGE_DOCKER_PORT}
     container_name: book-storage
     environment:
-      APP_TOKEN_EXPIRETIME: 20000
+      APP_TOKEN_EXPIRETIME: 200000
       APP_CLIENTS_TRACKER_URL: book-tracker-service:${TRACKER_DOCKER_PORT}
       APP_CLIENTS_TRACKER_NAME: ${TRACKER_NAME}
       APP_CLIENTS_TRACKER_PATH: ${TRACKER_PATH}
