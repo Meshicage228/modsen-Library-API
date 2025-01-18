@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/authentication-service/modsen-Library-API.authentication-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/authentication-service/modsen-Library-API.authentication-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/book-storage-service/modsen-Library-API.book-storage-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/book-storage-service/modsen-Library-API.book-storage-service.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modsen-Library-API.main.iml" filepath="$PROJECT_DIR$/.idea/modules/modsen-Library-API.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modsen-Library-API.test.iml" filepath="$PROJECT_DIR$/.idea/modules/modsen-Library-API.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/book-tracker-service/modsen-Library-API.book-tracker-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/book-tracker-service/modsen-Library-API.book-tracker-service.main.iml" />
     </modules>
   </component>
 </project>

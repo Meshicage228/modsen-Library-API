@@ -1,3 +1,4 @@
 include 'book-storage-service'
 include 'book-tracker-service'
+include 'authentication-service'
 

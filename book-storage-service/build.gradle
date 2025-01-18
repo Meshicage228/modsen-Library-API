@@ -10,13 +10,11 @@ version = "0.0.1"
 
 repositories {
     mavenCentral()
-    mavenLocal()
 }
 
 ext {
     set('liquibase', '4.27.0')
     set('springCloudVersion', '2023.0.3')
-    set('wiremockVersion', '3.9.2')
     set('lombokVersion', '1.18.32')
     set('mapstructVersion', '1.5.3.Final')
     set('lombokMapstructBinding', '0.2.0')
@@ -31,24 +29,18 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
-//    implementation 'org.springframework.boot:spring-boot-starter-security'
-//    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
-    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
 
     // Jwt
     implementation "io.jsonwebtoken:jjwt-jackson:${jwtwebtoken}"
     implementation "io.jsonwebtoken:jjwt-impl:${jwtwebtoken}"
     implementation "io.jsonwebtoken:jjwt-api:${jwtwebtoken}"
+    implementation "org.springframework.boot:spring-boot-starter-json"
 
     // Db
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     runtimeOnly 'org.postgresql:postgresql'
     implementation "org.liquibase:liquibase-core:${liquibase}"
-
-    // Cache
-    implementation "org.springframework.boot:spring-boot-starter-cache"
-    implementation "org.springframework.boot:spring-boot-starter-data-redis"
-    implementation "org.springframework.boot:spring-boot-starter-json"
 
     // Doc
     implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${springdoc}"
@@ -63,9 +55,6 @@ dependencies {
 
     // Tests
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.testcontainers:junit-jupiter'
-    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
-    testImplementation 'org.testcontainers:postgresql'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 

@@ -8,4 +8,8 @@ public abstract class BookException extends RuntimeException {
     protected static String formatMessage(String template, Long id) {
         return String.format(template, id);
     }
+
+    protected static String formatMessage(String template, String message) {
+        return String.format(template, message);
+    }
 }

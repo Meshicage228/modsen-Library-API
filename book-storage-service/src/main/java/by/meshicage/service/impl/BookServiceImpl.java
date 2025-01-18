@@ -1,9 +1,11 @@
 package by.meshicage.service.impl;
 
 import by.meshicage.dto.book.*;
+import by.meshicage.entity.BookEntity;
 import by.meshicage.entity.GenreEntity;
 import by.meshicage.exception.impl.book.BookNotFoundException;
 import by.meshicage.exception.impl.book.BookUpdateException;
+import by.meshicage.exception.impl.book.FailedToCreateBookException;
 import by.meshicage.mapper.BookMapper;
 import by.meshicage.repository.BookRepository;
 import by.meshicage.service.BookService;
@@ -21,6 +23,7 @@ import java.util.Optional;
 public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
     private final GenreService genreService;
+    private final TrackerServiceImpl trackerService;
     private final BookMapper bookMapper;
 
     @Override
@@ -31,16 +34,24 @@ public class BookServiceImpl implements BookService {
                     bookEntity.setGenre(byId);
                     return bookEntity;
                 })
-                .map(bookRepository::save)
+                .map(bookEntity -> {
+                    BookEntity saved = bookRepository.save(bookEntity);
+                    trackerService.createBookTracking(saved.getId());
+                    return saved;
+                })
                 .map(bookMapper::toCreatedBookDto)
-                .orElseThrow(RuntimeException::new);
+                .orElseThrow(() -> new FailedToCreateBookException(createBookDto.getTitle()));
     }
 
     @Override
     @Transactional
     public UpdatedBookDto fullUpdate(Long id, FullBookUpdateDto fullBookUpdateDto) {
         return bookRepository.findById(id)
-                .map(bookEntity -> bookMapper.fullBookUpdate(bookEntity, fullBookUpdateDto))
+                .map(bookEntity -> {
+                    GenreEntity byId = genreService.findById(fullBookUpdateDto.getGenre().getId());
+                    bookEntity.setGenre(byId);
+                    return bookMapper.fullBookUpdate(bookEntity, fullBookUpdateDto);
+                })
                 .map(bookMapper::toUpdatedBookDto)
                 .orElseThrow(() -> new BookUpdateException(id));
     }
@@ -77,5 +88,6 @@ public class BookServiceImpl implements BookService {
     @Override
     public void deleteBookById(Long id) {
         bookRepository.deleteById(id);
+        trackerService.deleteBookTracking(id);
     }
 }

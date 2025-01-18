@@ -1,5 +1,6 @@
 package by.meshicage.controller;
 
+import by.meshicage.controller.doc.BookControllerDoc;
 import by.meshicage.dto.book.*;
 import by.meshicage.service.BookService;
 import lombok.RequiredArgsConstructor;
