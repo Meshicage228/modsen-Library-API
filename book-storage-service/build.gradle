@@ -10,6 +10,7 @@ version = "0.0.1"
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 ext {
@@ -44,6 +45,9 @@ dependencies {
 
     // Doc
     implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${springdoc}"
+
+    // Custom starters
+    implementation 'by.meshicage:application-exception-starter:0.0.1'
 
     // Utils
     implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jackson}"

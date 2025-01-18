@@ -10,10 +10,12 @@ version = "0.0.1"
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 ext {
     set('liquibase', '4.27.0')
+    set('springCloudVersion', '2023.0.3')
     set('lombokVersion', '1.18.32')
     set('mapstructVersion', '1.5.3.Final')
     set('lombokMapstructBinding', '0.2.0')
@@ -39,6 +41,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     runtimeOnly 'org.postgresql:postgresql'
     implementation "org.liquibase:liquibase-core:${liquibase}"
+
+    // Custom starters
+    implementation 'by.meshicage:application-exception-starter:0.0.1'
 
     // Doc
     implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${springdoc}"
@@ -66,6 +71,12 @@ test {
 
 jacocoTestReport {
     dependsOn test
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }
 
 compileJava {
