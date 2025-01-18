@@ -1,5 +1,6 @@
 package by.meshicage.service.impl;
 
+import by.meshicage.applicationexceptionstarter.exception.impl.tracking.FailedToCreateTrackingException;
 import by.meshicage.applicationexceptionstarter.exception.impl.tracking.TrackingNotFoundException;
 import by.meshicage.dto.UpdateBookTrackingStatus;
 import by.meshicage.dto.UpdatedBookTracking;
@@ -28,7 +29,7 @@ public class TrackingServiceImpl implements TrackingService {
         return Optional.of(bookTrackingMapper.toEntity(tracking))
                 .map(repository::save)
                 .map(bookTrackingMapper::toCreatedBookTracking)
-                .orElseThrow(RuntimeException::new);
+                .orElseThrow(FailedToCreateTrackingException::new);
     }
 
     @Override
