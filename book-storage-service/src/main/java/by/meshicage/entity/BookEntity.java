@@ -2,6 +2,8 @@ package by.meshicage.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
 
 import java.time.LocalDateTime;
 
@@ -12,6 +14,8 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "books")
+@SQLRestriction("is_deleted = false")
+@SQLDelete(sql = "UPDATE books SET is_deleted = true WHERE id = ?")
 public class BookEntity {
 
     @Id
@@ -39,6 +43,9 @@ public class BookEntity {
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    @Column(name = "is_deleted")
+    private Boolean isDeleted = false;
 
     @PrePersist
     protected void onCreate() {

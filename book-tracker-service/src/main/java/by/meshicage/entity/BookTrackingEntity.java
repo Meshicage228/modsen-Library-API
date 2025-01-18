@@ -1,15 +1,13 @@
 package by.meshicage.entity;
 
 import jakarta.persistence.*;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldNameConstants;
-import org.hibernate.annotations.Filter;
-import org.hibernate.annotations.FilterDef;
-import org.hibernate.annotations.ParamDef;
-import org.hibernate.annotations.Where;
+import org.hibernate.annotations.*;
 
 import java.time.LocalDateTime;
 
@@ -21,9 +19,8 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "books_tracking")
-//@FilterDef(name = "deletedFilter", parameters = @ParamDef(name = "isDeleted", type = Boolean.class))
-//@Filter(name = "deletedFilter", condition = "is_deleted = :isDeleted")
-//@Where(clause = "is_deleted = false")
+@SQLDelete(sql = "UPDATE books_tracking SET is_deleted = true WHERE id = ?")
+@SQLRestriction("is_deleted = false")
 public class BookTrackingEntity {
 
     @Id
