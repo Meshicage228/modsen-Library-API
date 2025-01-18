@@ -4,6 +4,7 @@ import by.meshicage.exception.BookException;
 import by.meshicage.exception.ResourceNotFoundException;
 import by.meshicage.exception.dto.ExceptionResponse;
 import by.meshicage.exception.impl.DuplicateIsbnException;
+import by.meshicage.exception.impl.IncorrectCredentialsException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -40,6 +41,12 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
     @ExceptionHandler(BookException.class)
     public ExceptionResponse handleBookException(BookException e) {
         return buildExceptionResponse(INTERNAL_SERVER_ERROR, e);
+    }
+
+    @ResponseStatus(BAD_REQUEST)
+    @ExceptionHandler(IncorrectCredentialsException.class)
+    public ExceptionResponse incorrectCredentialsHandling(IncorrectCredentialsException e) {
+        return buildExceptionResponse(BAD_REQUEST, e);
     }
 
     @Override

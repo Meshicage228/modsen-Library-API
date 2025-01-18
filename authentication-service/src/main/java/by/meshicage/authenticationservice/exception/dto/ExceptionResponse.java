@@ -1,4 +1,4 @@
-package by.meshicage.exception.dto;
+package by.meshicage.authenticationservice.exception.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
