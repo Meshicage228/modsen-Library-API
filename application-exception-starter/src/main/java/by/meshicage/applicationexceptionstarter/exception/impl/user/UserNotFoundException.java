@@ -1,6 +1,6 @@
-package by.meshicage.authenticationservice.exception.user;
+package by.meshicage.applicationexceptionstarter.exception.impl.user;
 
-import by.meshicage.authenticationservice.exception.abstr.ResourceNotFoundException;
+import by.meshicage.applicationexceptionstarter.exception.abstr.ResourceNotFoundException;
 
 public class UserNotFoundException extends ResourceNotFoundException {
     private static final String message = "User with login : %s not found";

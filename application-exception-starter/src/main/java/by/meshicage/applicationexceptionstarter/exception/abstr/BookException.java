@@ -1,4 +1,4 @@
-package by.meshicage.exception;
+package by.meshicage.applicationexceptionstarter.exception.abstr;
 
 public abstract class BookException extends RuntimeException {
     protected BookException(String message) {

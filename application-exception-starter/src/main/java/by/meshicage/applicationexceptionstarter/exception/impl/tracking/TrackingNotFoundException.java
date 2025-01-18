@@ -1,4 +1,6 @@
-package by.meshicage.exception;
+package by.meshicage.applicationexceptionstarter.exception.impl.tracking;
+
+import by.meshicage.applicationexceptionstarter.exception.abstr.ResourceNotFoundException;
 
 public class TrackingNotFoundException extends ResourceNotFoundException {
     private static final String MESSAGE = "Tracking with book id : %d not found";

@@ -1,9 +1,8 @@
-package by.meshicage.exception.decoder;
+package by.meshicage.applicationexceptionstarter.decoder;
 
-import by.meshicage.exception.dto.ExceptionResponse;
-import by.meshicage.exception.impl.IncorrectCredentialsException;
+import by.meshicage.applicationexceptionstarter.dto.ExceptionResponse;
+import by.meshicage.applicationexceptionstarter.exception.impl.user.IncorrectCredentialsException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import feign.Response;
 import feign.codec.ErrorDecoder;
 import lombok.RequiredArgsConstructor;

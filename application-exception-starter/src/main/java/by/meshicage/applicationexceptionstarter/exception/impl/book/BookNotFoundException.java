@@ -1,6 +1,6 @@
-package by.meshicage.exception.impl.book;
+package by.meshicage.applicationexceptionstarter.exception.impl.book;
 
-import by.meshicage.exception.ResourceNotFoundException;
+import by.meshicage.applicationexceptionstarter.exception.abstr.ResourceNotFoundException;
 
 public class BookNotFoundException extends ResourceNotFoundException {
     private static final String MESSAGE = "Book with id %d not found";
