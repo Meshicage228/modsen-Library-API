@@ -27,34 +27,19 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
     @ResponseStatus(NOT_FOUND)
     @ExceptionHandler(ResourceNotFoundException.class)
     public ExceptionResponse handleResourceNotFoundException(ResourceNotFoundException e) {
-        log.error(e.getMessage(), e);
-        return ExceptionResponse.builder()
-                .status(NOT_FOUND.value())
-                .message(e.getMessage())
-                .timestamp(LocalDate.now())
-                .build();
+        return buildExceptionResponse(NOT_FOUND, e);
     }
 
     @ResponseStatus(CONFLICT)
     @ExceptionHandler(DuplicateIsbnException.class)
     public ExceptionResponse handleIsbnDuplicate(DuplicateIsbnException e) {
-        log.error(e.getMessage(), e);
-        return ExceptionResponse.builder()
-                .status(NOT_FOUND.value())
-                .message(e.getMessage())
-                .timestamp(LocalDate.now())
-                .build();
+        return buildExceptionResponse(CONFLICT, e);
     }
 
     @ResponseStatus(INTERNAL_SERVER_ERROR)
     @ExceptionHandler(BookException.class)
     public ExceptionResponse handleBookException(BookException e) {
-        log.error(e.getMessage(), e);
-        return ExceptionResponse.builder()
-                .status(NOT_FOUND.value())
-                .message(e.getMessage())
-                .timestamp(LocalDate.now())
-                .build();
+        return buildExceptionResponse(INTERNAL_SERVER_ERROR, e);
     }
 
     @Override
@@ -66,11 +51,20 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
         log.error(defaultMessage);
 
         ExceptionResponse response = ExceptionResponse.builder()
-                .status(HttpStatus.BAD_REQUEST.value())
+                .status(BAD_REQUEST.value())
                 .message(defaultMessage)
                 .timestamp(LocalDate.now())
                 .build();
 
-        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(response, BAD_REQUEST);
+    }
+
+    private ExceptionResponse buildExceptionResponse(HttpStatus status, Exception e) {
+        log.error(e.getMessage(), e);
+        return ExceptionResponse.builder()
+                .status(status.value())
+                .message(e.getMessage())
+                .timestamp(LocalDate.now())
+                .build();
     }
 }
