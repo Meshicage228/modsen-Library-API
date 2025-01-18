@@ -30,7 +30,7 @@ public class BookServiceImpl implements BookService {
     public CreatedBookDto createBook(CreateBookDto createBookDto) {
         return Optional.of(bookMapper.toBookEntity(createBookDto))
                 .map(bookEntity -> {
-                    GenreEntity byId = genreService.findById(bookEntity.getGenre().getId());
+                    GenreEntity byId = genreService.findById(createBookDto.getGenre().getId());
                     bookEntity.setGenre(byId);
                     return bookEntity;
                 })

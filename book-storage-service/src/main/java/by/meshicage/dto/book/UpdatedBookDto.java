@@ -6,6 +6,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Data
+@Builder
 public class UpdatedBookDto {
     private Long id;
     private String isbn;
