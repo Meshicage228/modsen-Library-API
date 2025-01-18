@@ -14,6 +14,7 @@ public interface BookMapper {
     BookEntity toBookEntity(CreateBookDto book);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(target = "genre", ignore = true)
     BookEntity fullBookUpdate(@MappingTarget BookEntity targetBook, FullBookUpdateDto sourceBook);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
