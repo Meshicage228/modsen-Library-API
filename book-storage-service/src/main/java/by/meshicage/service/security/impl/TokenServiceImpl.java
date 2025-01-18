@@ -29,7 +29,7 @@ public class TokenServiceImpl implements TokenService {
     private final SecretKeyGenerator generator;
     private SecretKey secretKey;
 
-    @Value(value = "${app.token.expireTime}")
+    @Value(value = "${app.token.expireTime:100000}")
     private long expiryTime;
 
     @PostConstruct

@@ -18,7 +18,7 @@ spring:
         format_sql: true
 app:
   token:
-    expireTime: 15000
+    expireTime: 150000
   clients:
     user-client:
       url: 127.0.0.1:8082
