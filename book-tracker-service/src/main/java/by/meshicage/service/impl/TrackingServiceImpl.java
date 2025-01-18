@@ -1,9 +1,9 @@
 package by.meshicage.service.impl;
 
+import by.meshicage.applicationexceptionstarter.exception.impl.tracking.TrackingNotFoundException;
 import by.meshicage.dto.UpdateBookTrackingStatus;
 import by.meshicage.dto.UpdatedBookTracking;
 import by.meshicage.entity.BookTrackingEntity;
-import by.meshicage.exception.TrackingNotFoundException;
 import by.meshicage.repository.TrackingRepository;
 import by.meshicage.service.TrackingService;
 import by.meshicage.dto.CreateBookTracking;

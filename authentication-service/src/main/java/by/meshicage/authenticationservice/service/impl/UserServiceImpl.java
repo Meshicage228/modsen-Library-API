@@ -1,13 +1,13 @@
 package by.meshicage.authenticationservice.service.impl;
 
+import by.meshicage.applicationexceptionstarter.exception.impl.role.RoleNotFountException;
+import by.meshicage.applicationexceptionstarter.exception.impl.user.FailedToCreateUserException;
+import by.meshicage.applicationexceptionstarter.exception.impl.user.IncorrectCredentialsException;
+import by.meshicage.applicationexceptionstarter.exception.impl.user.UserNotFoundException;
 import by.meshicage.authenticationservice.dto.CreateUserDto;
 import by.meshicage.authenticationservice.dto.UserResponseDto;
 import by.meshicage.authenticationservice.entity.RoleEntity;
 import by.meshicage.authenticationservice.entity.UserEntity;
-import by.meshicage.authenticationservice.exception.user.FailedToCreateUserException;
-import by.meshicage.authenticationservice.exception.user.IncorrectCredentialsException;
-import by.meshicage.authenticationservice.exception.role.RoleNotFountException;
-import by.meshicage.authenticationservice.exception.user.UserNotFoundException;
 import by.meshicage.authenticationservice.mapper.UserMapper;
 import by.meshicage.authenticationservice.repository.RoleRepository;
 import by.meshicage.authenticationservice.repository.UserRepository;

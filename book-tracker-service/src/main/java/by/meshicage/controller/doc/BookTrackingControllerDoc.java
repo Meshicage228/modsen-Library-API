@@ -1,11 +1,11 @@
 package by.meshicage.controller.doc;
 
 
+import by.meshicage.applicationexceptionstarter.dto.ExceptionResponse;
 import by.meshicage.dto.CreateBookTracking;
 import by.meshicage.dto.CreatedBookTracking;
 import by.meshicage.dto.UpdateBookTrackingStatus;
 import by.meshicage.dto.UpdatedBookTracking;
-import by.meshicage.exception.dto.ExceptionResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;

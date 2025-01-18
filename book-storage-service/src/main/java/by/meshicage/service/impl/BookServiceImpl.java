@@ -1,11 +1,11 @@
 package by.meshicage.service.impl;
 
+import by.meshicage.applicationexceptionstarter.exception.impl.book.BookNotFoundException;
+import by.meshicage.applicationexceptionstarter.exception.impl.book.BookUpdateException;
+import by.meshicage.applicationexceptionstarter.exception.impl.book.FailedToCreateBookException;
 import by.meshicage.dto.book.*;
 import by.meshicage.entity.BookEntity;
 import by.meshicage.entity.GenreEntity;
-import by.meshicage.exception.impl.book.BookNotFoundException;
-import by.meshicage.exception.impl.book.BookUpdateException;
-import by.meshicage.exception.impl.book.FailedToCreateBookException;
 import by.meshicage.mapper.BookMapper;
 import by.meshicage.repository.BookRepository;
 import by.meshicage.service.BookService;

@@ -1,7 +1,7 @@
 package by.meshicage.service.impl;
 
+import by.meshicage.applicationexceptionstarter.exception.impl.genre.GenreNotFoundException;
 import by.meshicage.entity.GenreEntity;
-import by.meshicage.exception.impl.genre.GenreNotFoundException;
 import by.meshicage.repository.GenreRepository;
 import by.meshicage.service.GenreService;
 import lombok.RequiredArgsConstructor;
