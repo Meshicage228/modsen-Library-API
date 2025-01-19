@@ -1,0 +1,543 @@
+{
+	"info": {
+		"_postman_id": "64d72ac1-d5ea-4844-bd1b-0572d9a5271f",
+		"name": "LIbrary-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29463280"
+	},
+	"item": [
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "book-storage-service",
+					"item": [
+						{
+							"name": "token",
+							"item": [
+								{
+									"name": "get token",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\" : \"Vlad\",\r\n    \"password\" : \"111111\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "127.0.0.1:8080/api/v1/token",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"v1",
+												"token"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "get book by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJWbGFkIiwiZXhwIjoxNzM3MjkwMjAyLCJyb2xlIjoiQURNSU4iLCJ1c2VybmFtZSI6IlZsYWQifQ.ZHyIea7ockmPjwxPLxstWd1rbi2jz4ZEz1ARiPNftGQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8080/api/v1/books/1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"books",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get book by id isbn",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJWbGFkIiwiZXhwIjoxNzM3MjkwMjAyLCJyb2xlIjoiQURNSU4iLCJ1c2VybmFtZSI6IlZsYWQifQ.ZHyIea7ockmPjwxPLxstWd1rbi2jz4ZEz1ARiPNftGQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8080/api/v1/books?isbn=978-3-16-148410-0",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"books"
+									],
+									"query": [
+										{
+											"key": "isbn",
+											"value": "978-3-16-148410-0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create book",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJWbGFkIiwiZXhwIjoxNzM3MjkwMjAyLCJyb2xlIjoiQURNSU4iLCJ1c2VybmFtZSI6IlZsYWQifQ.ZHyIea7ockmPjwxPLxstWd1rbi2jz4ZEz1ARiPNftGQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isbn\": \"902-5-22-164410-0\",\r\n    \"title\": \"Cherchill: Second World War\",\r\n    \"genre\": {\r\n        \"id\": \"6\"\r\n    },\r\n    \"description\": \"About Cherchill actions during SWW\",\r\n    \"author\": \"W. Cherchill\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:8080/api/v1/books",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "part book update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJWbGFkIiwiZXhwIjoxNzM3MjkwMjAyLCJyb2xlIjoiQURNSU4iLCJ1c2VybmFtZSI6IlZsYWQifQ.ZHyIea7ockmPjwxPLxstWd1rbi2jz4ZEz1ARiPNftGQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Second World War\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:8080/api/v1/books/1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"books",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "full update book",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJWbGFkIiwiZXhwIjoxNzM3MjkwMjAyLCJyb2xlIjoiQURNSU4iLCJ1c2VybmFtZSI6IlZsYWQifQ.ZHyIea7ockmPjwxPLxstWd1rbi2jz4ZEz1ARiPNftGQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isbn\": \"978-3-12-162313-0\",\r\n    \"title\": \"Second World War: Updated\",\r\n    \"genre\": {\r\n        \"id\" : 3\r\n    },\r\n    \"description\": \"About war: updated\",\r\n    \"author\": \"W. Cherchill\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:8080/api/v1/books/2",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"books",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all availabe books",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJWbGFkIiwiZXhwIjoxNzM3MjkwMjAyLCJyb2xlIjoiQURNSU4iLCJ1c2VybmFtZSI6IlZsYWQifQ.ZHyIea7ockmPjwxPLxstWd1rbi2jz4ZEz1ARiPNftGQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8080/api/v1/books/all?pageNumber=0&pageSize=100",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"books",
+										"all"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "0"
+										},
+										{
+											"key": "pageSize",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete book",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJWbGFkIiwiZXhwIjoxNzM3MjkwMjAyLCJyb2xlIjoiQURNSU4iLCJ1c2VybmFtZSI6IlZsYWQifQ.ZHyIea7ockmPjwxPLxstWd1rbi2jz4ZEz1ARiPNftGQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8080/api/v1/books/1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"books",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "book-tracker-service",
+					"item": [
+						{
+							"name": "create book track",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bookId\" : 12\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:8081/api/v1/tracking",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"tracking"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all available books",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "127.0.0.1:8081/api/v1/tracking/available",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"tracking",
+										"available"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update book status",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bookId\" : 2,\r\n    \"isBorrowed\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:8081/api/v1/tracking",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"tracking"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete book tracking",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:8081/api/v1/tracking/3",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"tracking",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "authentication-service",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"NewUser\",\r\n    \"password\" : \"532325\",\r\n    \"role\" : \"ADMIN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:8082/api/v1/users",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "log in",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "127.0.0.1:8082/api/v1/users/login?username=Vlad&password=111111",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"login"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "Vlad"
+										},
+										{
+											"key": "password",
+											"value": "111111"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
