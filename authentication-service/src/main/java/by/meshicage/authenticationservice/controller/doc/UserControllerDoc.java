@@ -1,5 +1,6 @@
 package by.meshicage.authenticationservice.controller.doc;
 
+import by.meshicage.applicationexceptionstarter.dto.ExceptionResponse;
 import by.meshicage.authenticationservice.dto.CreateUserDto;
 import by.meshicage.authenticationservice.dto.UserResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
@@ -22,7 +23,7 @@ public interface UserControllerDoc {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "User  successfully created"),
             @ApiResponse(responseCode = "400", description = "Invalid data for creating user",
-                    content = @Content(schema = @Schema(implementation = RuntimeException.class)))
+                    content = @Content(schema = @Schema(implementation = ExceptionResponse.class)))
     })
     @PostMapping
     @ResponseStatus(CREATED)
@@ -37,9 +38,9 @@ public interface UserControllerDoc {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "User  successfully retrieved"),
             @ApiResponse(responseCode = "404", description = "User  not found",
-                    content = @Content(schema = @Schema(implementation = RuntimeException.class))),
+                    content = @Content(schema = @Schema(implementation = ExceptionResponse.class))),
             @ApiResponse(responseCode = "400", description = "Invalid data for retrieving user",
-                    content = @Content(schema = @Schema(implementation = RuntimeException.class)))
+                    content = @Content(schema = @Schema(implementation = ExceptionResponse.class)))
     })
     @GetMapping("/login")
     UserResponseDto getUser (
