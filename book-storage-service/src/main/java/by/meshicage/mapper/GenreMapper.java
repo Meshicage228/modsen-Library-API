@@ -12,7 +12,5 @@ import org.mapstruct.ReportingPolicy;
 )
 public interface GenreMapper {
     GenreDto toDto(GenreEntity genreEntity);
-    GenreEntity toEntity(GenreDto genreDto);
     GenreEntity toEntity(CreateGenreDto createGenreDto);
-    GenreEntity toEntity(UpdateGenreDto createGenreDto);
 }
