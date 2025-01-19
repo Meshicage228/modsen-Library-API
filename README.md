@@ -31,9 +31,9 @@
 
 http://localhost:8080/swagger-ui/index.html - документация `book-storage-service`
 
-http://localhost:8081/swagger-ui/index.html - user-service `book-tracking-service`
+http://localhost:8081/swagger-ui/index.html - документация `book-tracking-service`
 
-http://localhost:8082/swagger-ui/index.html - user-service `authentication-service`
+http://localhost:8082/swagger-ui/index.html - документация `authentication-service`
 
 ---
 ## Как пользоваться API?
