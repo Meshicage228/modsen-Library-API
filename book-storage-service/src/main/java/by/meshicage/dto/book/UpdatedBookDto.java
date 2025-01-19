@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UpdatedBookDto {
     private Long id;
     private String isbn;
