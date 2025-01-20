@@ -1,0 +1,24 @@
+tasks.register('publishStarters') {
+    group = 'api-custom-tasks'
+    description = 'Publishes starters to local maven repository'
+
+    finalizedBy {
+        subprojects.findAll().stream()
+                .filter(pr -> pr.name.endsWith('-starter'))
+                .map(pr -> pr.tasks.named('publishToMavenLocal').get())
+                .toArray()
+    }
+}
+
+tasks.register("buildApplicationBootJars") {
+    group = 'api-custom-tasks'
+    description = 'Build necessary bootJars for docker'
+
+    finalizedBy {
+        subprojects.findAll().stream()
+                .filter(pr -> !pr.name.endsWith("-starter"))
+                .filter(pr -> pr.tasks.findByName('bootJar') != null)
+                .map(pr -> pr.tasks.named('bootJar').get())
+                .toArray()
+    }
+}
