@@ -22,4 +22,5 @@ spring:
       hibernate:
         format_sql: true
 app:
+  scheduling-check-expiration: "0 * * * * *"
   returnRate: 7

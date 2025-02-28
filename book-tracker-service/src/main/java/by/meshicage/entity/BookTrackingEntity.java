@@ -39,6 +39,9 @@ public class BookTrackingEntity {
     @Column(name = "return_by")
     private LocalDateTime returnBy;
 
+    @Column(name = "is_expired")
+    private Boolean isExpired = false;
+
     @Column(name = "is_deleted", nullable = false)
     private Boolean isDeleted = false;
 }

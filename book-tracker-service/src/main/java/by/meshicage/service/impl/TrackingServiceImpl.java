@@ -12,6 +12,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,6 +20,12 @@ import org.springframework.stereotype.Service;
 public class TrackingServiceImpl implements TrackingService {
     private final TrackingRepository repository;
     private final BookTrackingMapper bookTrackingMapper;
+
+    @Scheduled(cron = "${app.scheduling-check-expiration}")
+    @Transactional
+    public void finesFind(){
+        repository.detectExpiredBooks();
+    }
 
     @Override
     public Page<CreatedBookTracking> getAllAvailableBooks(Integer pageNum, Integer pageSize) {
