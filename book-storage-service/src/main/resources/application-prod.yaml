@@ -1,11 +1,11 @@
 server:
-  port: 8081
+  port: 8080
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     password: 123123
     username: modsen
-    url: jdbc:postgresql://localhost:5430/library_db
+    url: jdbc:postgresql://main-db:5432/library_db
   liquibase:
     enabled: true
     change-log: db.changelog/changelog-master.xml
@@ -17,4 +17,14 @@ spring:
       hibernate:
         format_sql: true
 app:
-  returnRate: 7
+  token:
+    expireTime: 200000
+  clients:
+    user-client:
+      url: authentication-service:8082
+      name: user-client
+      path: /api/v1/users
+    tracker:
+      url: book-tracker-service:8081
+      name: tracker-client
+      path: /api/v1/tracking
