@@ -1,0 +1,17 @@
+CREATE OR REPLACE FUNCTION log_control()
+    RETURNS TRIGGER AS
+$$
+BEGIN
+    IF TG_OP = 'INSERT' THEN
+        INSERT INTO storage_logs(TABLE_NAME, OPERATION, NEW_DATA)
+        VALUES (TG_TABLE_NAME, TG_OP, row_to_json(NEW));
+    ELSEIF TG_OP = 'UPDATE' THEN
+        INSERT INTO storage_logs(TABLE_NAME, OPERATION, OLD_DATA, NEW_DATA)
+        VALUES (TG_TABLE_NAME, TG_OP, row_to_json(OLD), row_to_json(NEW));
+    ELSEIF TG_OP = 'DELETE' THEN
+        INSERT INTO storage_logs(TABLE_NAME, OPERATION, OLD_DATA)
+        VALUES (TABLE_NAME, OPERATION, row_to_json(OLD));
+    END IF;
+    RETURN NULL;
+END;
+$$ LANGUAGE plpgsql;
