@@ -1,6 +1,11 @@
 server:
   port: 8080
 spring:
+  kafka:
+    bootstrap-servers: PLAINTEXT://localhost:9092,PLAINTEXT_HOST://localhost:29092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.LongSerializer
   datasource:
     driver-class-name: org.postgresql.Driver
     password: 123123
