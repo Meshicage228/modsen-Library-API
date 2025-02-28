@@ -1,3 +1,5 @@
+server:
+  port: 8080
 spring:
   kafka:
     bootstrap-servers: PLAINTEXT://kafka-service:9092,PLAINTEXT_HOST://localhost:29092
