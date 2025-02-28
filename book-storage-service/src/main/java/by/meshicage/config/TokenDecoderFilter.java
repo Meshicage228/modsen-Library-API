@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -24,15 +25,13 @@ public class TokenDecoderFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
 
-        String authorization = request.getHeader(AUTHORIZATION_HEADER);
+        Optional.ofNullable(request.getHeader(AUTHORIZATION_HEADER))
+                .filter(authorization -> authorization.startsWith(BEARER))
+                .ifPresent(authorization -> {
+                    Authentication authentication = tokenService.fromToken(authorization.substring(BEARER.length()));
+                    SecurityContextHolder.getContext().setAuthentication(authentication);
+                });
 
-        if (authorization != null) {
-            if (authorization.startsWith(BEARER)) {
-                Authentication authentication = tokenService.fromToken(authorization.substring(BEARER.length()));
-
-                SecurityContextHolder.getContext().setAuthentication(authentication);
-            }
-        }
         filterChain.doFilter(request, response);
     }
 }
