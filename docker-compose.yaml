@@ -1,6 +1,7 @@
 version: '3.8'
 
 services:
+
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     environment:
@@ -18,7 +19,7 @@ services:
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-service:9092,PLAINTEXT_HOST://localhost:29092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
@@ -33,6 +34,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB_TITLE}
+
   book-tracker-service:
     restart: on-failure
     ports:
@@ -44,8 +46,9 @@ services:
       context: /book-tracker-service
       dockerfile: Dockerfile
     depends_on:
-      - kafka
+      - kafka-service
       - main-db
+
   authentication-service:
     restart: on-failure
     ports:
@@ -58,6 +61,7 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - main-db
+
   book-storage-service:
     restart: on-failure
     ports:
