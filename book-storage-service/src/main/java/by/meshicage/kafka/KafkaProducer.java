@@ -1,7 +1,5 @@
 package by.meshicage.kafka;
 
-import by.meshicage.dto.tracking.CreateBookTracking;
-import by.meshicage.dto.tracking.CreatedBookTracking;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -15,7 +13,7 @@ public class KafkaProducer {
         kafkaTemplate.send("book-created", bookId);
     }
 
-//    public void deleteBookTracking(String topic, Long bookId){
-//        kafkaTemplate.send(topic, bookId);
-//    }
+    public void deleteBookTracking(Long bookId){
+        kafkaTemplate.send("book-deleted", bookId);
+    }
 }

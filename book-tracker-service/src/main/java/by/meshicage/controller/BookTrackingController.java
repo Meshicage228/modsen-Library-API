@@ -4,7 +4,6 @@ import by.meshicage.controller.doc.BookTrackingControllerDoc;
 import by.meshicage.dto.UpdateBookTrackingStatus;
 import by.meshicage.dto.UpdatedBookTracking;
 import by.meshicage.service.TrackingService;
-import by.meshicage.dto.CreateBookTracking;
 import by.meshicage.dto.CreatedBookTracking;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -20,19 +19,11 @@ import static org.springframework.data.web.config.EnableSpringDataWebSupport.Pag
 public class BookTrackingController implements BookTrackingControllerDoc {
     private final TrackingService service;
 
-    public CreatedBookTracking createBookTracking(CreateBookTracking createBookTracking) {
-        return service.createTracking(createBookTracking);
-    }
-
     public Page<CreatedBookTracking> getBookTrackingAvailable(Integer pageNum, Integer pageSize) {
         return service.getAllAvailableBooks(pageNum, pageSize);
     }
 
     public UpdatedBookTracking updateBookTrackingStatus(UpdateBookTrackingStatus bookTrackingStatus) {
         return service.updateTrackingBookStatus(bookTrackingStatus);
-    }
-
-    public void deleteBookTracking(Long bookId) {
-        service.deleteTrackingByBookId(bookId);
     }
 }
