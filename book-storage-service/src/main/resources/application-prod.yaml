@@ -27,7 +27,3 @@ app:
       url: authentication-service:8082
       name: user-client
       path: /api/v1/users
-    tracker:
-      url: book-tracker-service:8081
-      name: tracker-client
-      path: /api/v1/tracking

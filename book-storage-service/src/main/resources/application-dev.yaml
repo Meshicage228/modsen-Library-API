@@ -29,7 +29,3 @@ app:
       url: 127.0.0.1:8082
       name: user-client
       path: /api/v1/users
-    tracker:
-      url: 127.0.0.1:8081
-      name: tracker-client
-      path: /api/v1/tracking
