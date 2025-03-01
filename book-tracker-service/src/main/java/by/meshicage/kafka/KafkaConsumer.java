@@ -7,9 +7,13 @@ import by.meshicage.repository.TrackingRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.annotation.RetryableTopic;
+import org.springframework.kafka.retrytopic.DltStrategy;
+import org.springframework.kafka.retrytopic.TopicSuffixingStrategy;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.retry.annotation.Backoff;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +26,11 @@ public class KafkaConsumer {
     private final BookTrackingMapper bookTrackingMapper;
     private final TrackingRepository repository;
 
+    @RetryableTopic(attempts = "5",
+            topicSuffixingStrategy = TopicSuffixingStrategy.SUFFIX_WITH_INDEX_VALUE,
+            exclude = {NullPointerException.class}, traversingCauses = "false",
+            dltStrategy = DltStrategy.NO_DLT,
+            backoff = @Backoff(delay = 1000, multiplier = 2, maxDelay = 5000))
     @KafkaListener(topics = "book-created", groupId = "my_consumer",
             containerFactory = "bookTrackingKafkaListenerContainerFactory")
     public void createTracking(@Payload CreateBookTracking tracking,
