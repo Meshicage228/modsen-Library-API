@@ -1,6 +1,6 @@
 package by.meshicage.config;
 
-import org.apache.kafka.clients.admin.NewTopic;
+import by.meshicage.dto.CreateBookTracking;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.LongDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -9,9 +9,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.config.KafkaListenerContainerFactory;
-import org.springframework.kafka.config.TopicBuilder;
-import org.springframework.kafka.core.ConsumerFactory;
-import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+import org.springframework.kafka.core.*;
+import org.springframework.kafka.support.serializer.JsonDeserializer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,40 +21,61 @@ public class KafkaConsumerConfiguration {
     @Value("${spring.kafka.bootstrap-servers}")
     private String kafkaServer;
 
+    private Map<String, Object> commonConsumerConfigs() {
+        return Map.of(
+                ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaServer,
+                ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class
+        );
+    }
+
     @Bean
-    public Map<String, Object> consumerConfigs() {
-        return new HashMap<>() {{
-            put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaServer);
-            put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+    public Map<String, Object> consumerLongConfigs() {
+        return new HashMap<>(commonConsumerConfigs()) {{
             put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, LongDeserializer.class);
         }};
     }
 
     @Bean
-    public KafkaListenerContainerFactory<?> kafkaListenerContainerFactory(
-            ConsumerFactory<String, Long> consumerFactory) {
-        ConcurrentKafkaListenerContainerFactory<String, Long> factory =
+    public Map<String, Object> consumerObjConfigs() {
+        return new HashMap<>(commonConsumerConfigs()) {{
+            put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
+            put(JsonDeserializer.TRUSTED_PACKAGES, "*");
+        }};
+    }
+
+    @Bean
+    public ConsumerFactory<String, Long> consumerLongFactory() {
+        return new DefaultKafkaConsumerFactory<>(
+                consumerLongConfigs(),
+                new StringDeserializer(),
+                new LongDeserializer()
+        );
+    }
+
+    @Bean
+    public ConsumerFactory<String, CreateBookTracking> consumerBookTrackingFactory() {
+        return new DefaultKafkaConsumerFactory<>(
+                consumerObjConfigs(),
+                new StringDeserializer(),
+                new JsonDeserializer<>(CreateBookTracking.class, false)
+        );
+    }
+
+    private <T> KafkaListenerContainerFactory<?> createKafkaListenerContainerFactory(
+            ConsumerFactory<String, T> consumerFactory) {
+        ConcurrentKafkaListenerContainerFactory<String, T> factory =
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory);
         return factory;
     }
 
     @Bean
-    public ConsumerFactory<String, Long> consumerFactory() {
-        return new DefaultKafkaConsumerFactory<>(consumerConfigs());
+    public KafkaListenerContainerFactory<?> longKafkaListenerContainerFactory() {
+        return createKafkaListenerContainerFactory(consumerLongFactory());
     }
 
     @Bean
-    public NewTopic bookCreatedTopic() {
-        return TopicBuilder
-                .name("book-created")
-                .build();
-    }
-
-    @Bean
-    public NewTopic bookDeletedTopic() {
-        return TopicBuilder
-                .name("book-deleted")
-                .build();
+    public KafkaListenerContainerFactory<?> bookTrackingKafkaListenerContainerFactory() {
+        return createKafkaListenerContainerFactory(consumerBookTrackingFactory());
     }
 }

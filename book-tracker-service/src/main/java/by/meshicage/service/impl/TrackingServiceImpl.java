@@ -21,8 +21,8 @@ public class TrackingServiceImpl implements TrackingService {
     private final TrackingRepository repository;
     private final BookTrackingMapper bookTrackingMapper;
 
-    @Scheduled(cron = "${app.scheduling-check-expiration}")
     @Transactional
+    @Scheduled(cron = "${app.scheduling-check-expiration}")
     public void finesFind(){
         repository.detectExpiredBooks();
     }
