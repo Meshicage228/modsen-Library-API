@@ -1,6 +1,8 @@
 server:
   port: 8080
 spring:
+  cache:
+    type: redis
   kafka:
     bootstrap-servers: PLAINTEXT://localhost:9092,PLAINTEXT_HOST://localhost:29092
     producer:
@@ -21,6 +23,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
 app:
   token:
     expireTime: 150000
