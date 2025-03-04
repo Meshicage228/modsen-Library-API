@@ -12,7 +12,9 @@ import by.meshicage.repository.BookRepository;
 import by.meshicage.service.BookService;
 import by.meshicage.service.GenreService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -29,6 +31,7 @@ public class BookServiceImpl implements BookService {
     private final BookMapper bookMapper;
 
     @Override
+    @CachePut(value = "books", key = "#result.id")
     public CreatedBookDto createBook(CreateBookDto createBookDto) {
         return Optional.of(bookMapper.toBookEntity(createBookDto))
                 .map(bookEntity -> {
@@ -46,6 +49,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    @CachePut(value = "books", key = "#id")
     @Transactional
     public UpdatedBookDto fullUpdate(Long id, FullBookUpdateDto fullBookUpdateDto) {
         return bookRepository.findById(id)
@@ -58,7 +62,13 @@ public class BookServiceImpl implements BookService {
                 .orElseThrow(() -> new BookUpdateException(id));
     }
 
+    // todo: isbn and id cache conflict
+//    @Caching(
+//            put = {@CachePut(value = "books", key = "#result.id"),
+//                    @CachePut(value = "books", key = "#result.isbn")
+//            })
     @Override
+    @CachePut(value = "books", key = "#id")
     @Transactional
     public UpdatedBookDto partUpdate(Long id, PartUpdateBookDto partUpdateBookDto) {
         return bookRepository.findById(id)
@@ -67,18 +77,16 @@ public class BookServiceImpl implements BookService {
                 .orElseThrow(() -> new BookUpdateException(id));
     }
 
-    // todo: bug fix
     @Override
-    @CachePut(value = "bookById", key = "#id")
+    @Cacheable(value = "books", key = "#id")
     public CreatedBookDto getBookById(Long id) {
         return bookRepository.findById(id)
                 .map(bookMapper::toCreatedBookDto)
                 .orElseThrow(() -> new BookNotFoundException(id));
     }
 
-    // todo: add cache lifetime
     @Override
-    @CachePut(value = "bookByISBN", key = "#isbn")
+    @Cacheable(value = "books", key = "#isbn")
     public CreatedBookDto getBookByISBN(String isbn) {
         return bookRepository.findByIsbn(isbn)
                 .map(bookMapper::toCreatedBookDto)
@@ -92,6 +100,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    @CacheEvict(value = "books", key = "#id")
     public void deleteBookById(Long id) {
         bookRepository.deleteById(id);
         kafkaProducer.deleteBookTracking(id);
