@@ -12,6 +12,7 @@ import by.meshicage.repository.BookRepository;
 import by.meshicage.service.BookService;
 import by.meshicage.service.GenreService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -66,14 +67,18 @@ public class BookServiceImpl implements BookService {
                 .orElseThrow(() -> new BookUpdateException(id));
     }
 
+    // todo: bug fix
     @Override
+    @CachePut(value = "bookById", key = "#id")
     public CreatedBookDto getBookById(Long id) {
         return bookRepository.findById(id)
                 .map(bookMapper::toCreatedBookDto)
                 .orElseThrow(() -> new BookNotFoundException(id));
     }
 
+    // todo: add cache lifetime
     @Override
+    @CachePut(value = "bookByISBN", key = "#isbn")
     public CreatedBookDto getBookByISBN(String isbn) {
         return bookRepository.findByIsbn(isbn)
                 .map(bookMapper::toCreatedBookDto)
