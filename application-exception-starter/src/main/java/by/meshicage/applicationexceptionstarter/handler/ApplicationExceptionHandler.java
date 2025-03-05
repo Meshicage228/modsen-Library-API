@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import static org.springframework.http.HttpStatus.*;
 
@@ -65,7 +65,7 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
         ExceptionResponse response = ExceptionResponse.builder()
                 .status(BAD_REQUEST.value())
                 .message(defaultMessage)
-                .timestamp(LocalDate.now())
+                .timestamp(LocalDateTime.now())
                 .build();
 
         return new ResponseEntity<>(response, BAD_REQUEST);
@@ -76,7 +76,7 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
         return ExceptionResponse.builder()
                 .status(status.value())
                 .message(e.getMessage())
-                .timestamp(LocalDate.now())
+                .timestamp(LocalDateTime.now())
                 .build();
     }
 }
