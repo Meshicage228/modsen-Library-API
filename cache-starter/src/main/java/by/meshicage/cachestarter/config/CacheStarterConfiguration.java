@@ -27,7 +27,7 @@ public class CacheStarterConfiguration {
 
     @PostConstruct
     public void init() {
-        log.info("CacheStarterConfiguration created beans");
+        log.info("Initializing RedisCacheStarter Configuration");
     }
 
     @Bean
