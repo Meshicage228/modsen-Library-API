@@ -15,5 +15,5 @@ public interface UserClient {
 
     @GetMapping("/login")
     UserResponseDto login(@RequestParam(value = "username") @NotBlank(message = "Provide login") String username,
-                            @RequestParam(value = "password") @NotBlank(message = "Provide password") String password);
+                          @RequestParam(value = "password") @NotBlank(message = "Provide password") String password);
 }

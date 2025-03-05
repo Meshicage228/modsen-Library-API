@@ -8,10 +8,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service("bookService")
 @Primary
+@Service("bookService")
 public class BookServiceImpl implements BookService {
-    private BookService cacheService;
+    private final BookService cacheService;
 
     public BookServiceImpl(@Qualifier("bookCache") BookService cacheService) {
         this.cacheService = cacheService;

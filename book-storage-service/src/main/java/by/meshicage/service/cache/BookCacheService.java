@@ -24,10 +24,10 @@ import java.util.Optional;
 
 @Service("bookCache")
 public class BookCacheService implements BookService {
-    private BookRepository bookRepository;
-    private GenreService genreService;
-    private KafkaProducer kafkaProducer;
-    private BookMapper bookMapper;
+    private final BookRepository bookRepository;
+    private final GenreService genreService;
+    private final KafkaProducer kafkaProducer;
+    private final BookMapper bookMapper;
 
     public BookCacheService(BookRepository bookRepository,
                             @Qualifier("genreCacheService") GenreService genreService,
@@ -40,7 +40,7 @@ public class BookCacheService implements BookService {
     }
 
     @Override
-    @CachePut(value = "books", key = "#result.id")
+    @Cacheable(value = "books", key = "#result.id")
     public CreatedBookDto createBook(CreateBookDto createBookDto) {
         return Optional.of(bookMapper.toBookEntity(createBookDto))
                 .map(bookEntity -> {
@@ -110,7 +110,7 @@ public class BookCacheService implements BookService {
     }
 
     @Override
-    @CacheEvict(value = "books", key = "#result.id")
+    @CacheEvict(value = "books", key = "#id")
     public void deleteBookById(Long id) {
         bookRepository.deleteById(id);
         kafkaProducer.deleteBookTracking(id);
